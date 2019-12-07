@@ -36,7 +36,7 @@ export default {
     }
   },
   mounted:function(){
-      axios.get("http://localhost:8089/all",{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'})
+      axios.get("http://120.79.165.12:8089/all",{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'})
         
         .then(response=>{   
             console.log(response.data);
@@ -50,7 +50,7 @@ export default {
   methods: {
     
     change:function(){
-        axios.get("http://localhost:8089/app/201901002",{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'})
+        axios.get("http://120.79.165.12:8089/app/201901002",{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'})
         
         .then(response=>{   
             console.log(response.data);
@@ -74,7 +74,7 @@ export default {
     uupdate:function(){
         axios({
         method: 'post',
-        url: 'http://localhost:8089/add',
+        url: 'http://120.79.165.12:8089/add',
         data: {
           investmentNumber:'1678',
                     projectName:'we',

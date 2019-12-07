@@ -27,7 +27,7 @@ export default {
             uploadConfig: function (e) {
                     var formData = new FormData();
                     formData.append('file', e.target.files[0]);
-                    var  url = 'http://localhost:8089/fileUpload';
+                    var  url = 'http://120.79.165.12:8089/fileUpload';
                     var config = 'multipart/form-data;';
                     axios.post(url,formData, config).then(function (response) {
                         console.log(response.data)

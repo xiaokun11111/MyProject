@@ -34,7 +34,7 @@
             event.preventDefault();
             let formData = new FormData();
             formData.append("file", this.file);
-            axios.post('http://localhost:8089/uploadFile', formData)
+            axios.post('http://120.79.165.12:8089/uploadFile', formData)
             
             .then(function (response) {
                 alert(response.data);
@@ -65,7 +65,7 @@
         deleteFile:function(){
           axios({
                 method: 'get',
-                url: 'http://localhost:8089/deleteFile',
+                url: 'http://120.79.165.12:8089/deleteFile',
                 params: {
                     fileName:"b.txt",
                     
@@ -85,7 +85,7 @@
           
           axios({
                 method: 'get',
-                url: 'http://localhost:8089/downloadFile',
+                url: 'http://120.79.165.12:8089/downloadFile',
                 params: {
                     fileName:"b.txt",
                     
