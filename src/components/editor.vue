@@ -108,10 +108,10 @@ import axios from 'axios'
                 var patt="\\d{4}(0[1-9]|[1][012])[0-9]{3}"
                 var numRe = new RegExp(patt)
                 var ch=1;
-                if(!numRe.test(this.formValidate.investmentNumber)){
-                    alert("请输入正确的项目编号")
-                    return 
-                }
+                // if(!numRe.test(this.formValidate.investmentNumber)){
+                //     alert("请输入正确的项目编号")
+                //     return 
+                // }
                 if(this.formValidate.beginDate>this.formValidate.endDate||this.formValidate.aBeginDate>this.formValidate.aEndDate){
                     alert("日期设置有误")
                     return 
@@ -119,11 +119,11 @@ import axios from 'axios'
                 if(this.check==true){
                 axios({
                     method: 'post',
-                    url: 'http://localhost:8089/del/'+this.formValidate.investmentNumber}) 
+                    url: 'http://120.79.165.12:8089/del/'+this.formValidate.investmentNumber}) 
                 }
                 axios({
                     method: 'post',
-                    url: 'http://localhost:8089/add',
+                    url: 'http://120.79.165.12:8089/add',
                     data: {
                                 investmentNumber:this.formValidate.investmentNumber,
                                 projectName:this.formValidate.projectName,
@@ -172,8 +172,8 @@ import axios from 'axios'
                     formData.append("file", this.file);
                     axios({
                             method: 'post',
-                            url: 'http://localhost:8089/addNumber/'+this.formValidate.investmentNumber}) 
-                    axios.post('http://localhost:8089/uploadFile', formData)
+                            url: 'http://120.79.165.12:8089/addNumber/'+this.formValidate.investmentNumber}) 
+                    axios.post('http://120.79.165.12:8089/uploadFile', formData)
                     .then(function (response) {
                         alert(response.data)
                         
@@ -200,7 +200,7 @@ import axios from 'axios'
             deleteFile:function(){
                 axios({
                         method: 'get',
-                        url: 'http://localhost:8089/deleteFile',
+                        url: 'http://120.79.165.12:8089/deleteFile',
                         params: {
                             fileName:this.currentFileName,
                             investmentNumber:this.formValidate.investmentNumber
@@ -220,7 +220,7 @@ import axios from 'axios'
         downFile:function(){
             axios({
                     method: 'get',
-                    url: 'http://localhost:8089/downloadFile',
+                    url: 'http://120.79.165.12:8089/downloadFile',
                     params: {
                         fileName:this.currentFileName 
                     },

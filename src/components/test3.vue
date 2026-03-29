@@ -234,7 +234,7 @@ import axios from 'axios'
         },
 
         mounted:function(){
-                axios.get("http://localhost:8089/all",{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'})
+                axios.get("http://120.79.165.12:8089/all",{'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'})
                     
                     .then(response=>{   
                         console.log(response.data);
@@ -302,7 +302,7 @@ import axios from 'axios'
             handleSubmit(){
                 axios({
                 method: 'get',
-                url: 'http://localhost:8089/search',
+                url: 'http://120.79.165.12:8089/search',
                 params: {
                     investmentNumber:this.formInline.investmentNumber,
                     projectName:this.formInline.projectName,
